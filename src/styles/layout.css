@@ -203,6 +203,128 @@ body {
 }
 
 /* =========================================
+   Tarjetas de estadísticas (ej: Choferes)
+   ========================================= */
+/* Las tarjetas de choferes comparten el mismo estilo de "caja blanca" */
+.tarjeta-estadistica,
+.tarjeta-chofer {
+  height: 100%;
+  background-color: #ffffff;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.tarjeta-icono {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Colores de fondo de los íconos */
+.icono-azul {
+  background-color: #1e3a8a;
+}
+
+.icono-verde {
+  background-color: #22c55e;
+}
+
+.icono-naranja {
+  background-color: #f97316;
+}
+
+.tarjeta-valor {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.tarjeta-texto {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+/* =========================================
+   Tarjetas de choferes
+   ========================================= */
+/* El color de fondo lo da la clase .icono-azul */
+.chofer-avatar {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chofer-nombre {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.chofer-dato {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+/* Etiqueta de disponibilidad */
+.chofer-estado {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.estado-disponible {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.estado-no-disponible {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.estado-guardia {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+/* Recuadro inferior con el vencimiento de la licencia */
+.licencia-vencimiento {
+  margin-top: 16px;
+  padding: 10px 12px;
+  border: 1px solid;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.licencia-vigente {
+  background-color: #dcfce7;
+  border-color: #86efac;
+  color: #166534;
+}
+
+.licencia-proxima {
+  background-color: #fef9c3;
+  border-color: #fde047;
+  color: #854d0e;
+}
+
+/* =========================================
    Responsive: en pantallas chicas el menú
    muestra siempre solo los íconos
    ========================================= */
@@ -222,5 +344,16 @@ body {
   .contenido {
     margin-left: var(--ancho-sidebar-contraido);
     padding: 20px 16px;
+  }
+
+  /* Tarjetas de choferes más compactas en celulares */
+  .tarjeta-chofer {
+    padding: 16px;
+  }
+
+  .chofer-avatar {
+    width: 56px;
+    height: 56px;
+    font-size: 18px;
   }
 }
