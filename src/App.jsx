@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 
 import Home from "./pages/Home";
-import Pacientes from "./pages/Pacientes";
+
 import Viajes from "./pages/Viajes";
 import Asistencias from "./pages/Asistencias";
 import AgendaTurnos from "./pages/AgendaTurnos";
@@ -13,7 +13,9 @@ import Choferes from "./pages/Choferes";
 import Vehiculos from "./pages/Vehiculos";
 import Gastos from "./pages/Gastos";
 import Presupuestos from "./pages/Presupuestos";
-
+import Pacientes from "./pages/pacientes/Pacientes";
+import NuevoPaciente from "./pages/pacientes/NuevoPaciente";
+import EditarPaciente from "./pages/pacientes/EditarPaciente";
 const App = () => {
   // Indica si el menú lateral está contraído (solo íconos) o expandido
   const [menuContraido, setMenuContraido] = useState(false);
@@ -28,10 +30,16 @@ const App = () => {
       <Header onToggleMenu={alternarMenu} />
       <Sidebar contraido={menuContraido} />
 
-      <main className={menuContraido ? "contenido contenido-expandido" : "contenido"}>
+      <main
+        className={
+          menuContraido ? "contenido contenido-expandido" : "contenido"
+        }
+      >
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/pacientes" element={<Pacientes />} />
+          <Route path="/pacientes/nuevo" element={<NuevoPaciente />} />
+          <Route path="/pacientes/editar/:dni" element={<EditarPaciente />} />
           <Route path="/viajes" element={<Viajes />} />
           <Route path="/asistencias" element={<Asistencias />} />
           <Route path="/agenda-turnos" element={<AgendaTurnos />} />
