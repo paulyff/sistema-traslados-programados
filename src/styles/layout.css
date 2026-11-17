@@ -1,0 +1,226 @@
+/* =========================================
+   Variables de colores y medidas del panel
+   ========================================= */
+:root {
+  --azul-oscuro: #0f2a5c;      /* fondo del menú lateral */
+  --azul-activo: #2563eb;      /* opción seleccionada */
+  --azul-hover: #1b3a75;       /* opción al pasar el mouse */
+  --texto-menu: #c7d2e8;
+  --fondo-pagina: #f4f6fa;
+  --borde: #e5e7eb;
+
+  --alto-header: 64px;
+  --ancho-sidebar: 250px;
+  --ancho-sidebar-contraido: 72px;
+}
+
+body {
+  background-color: var(--fondo-pagina);
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #1f2937;
+}
+
+/* =========================================
+   Barra superior (Header)
+   ========================================= */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--alto-header);
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--borde);
+  z-index: 1000;
+}
+
+.logo-icono {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background-color: var(--azul-activo);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.logo-texto {
+  margin-left: 10px;
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--azul-oscuro);
+}
+
+.btn-toggle,
+.btn-notificacion {
+  border: none;
+  background: transparent;
+  color: #4b5563;
+  font-size: 20px;
+}
+
+.btn-toggle:hover,
+.btn-notificacion:hover {
+  color: var(--azul-activo);
+}
+
+/* Buscador con ícono adentro del input */
+.header-buscador {
+  position: relative;
+  width: 360px;
+}
+
+.header-buscador .fa-search {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+
+.header-buscador .form-control {
+  padding-left: 38px;
+  border-radius: 20px;
+  background-color: var(--fondo-pagina);
+  border-color: var(--borde);
+}
+
+/* Punto rojo de notificaciones */
+.badge-notificacion {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ef4444;
+}
+
+.usuario-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #dbe4f5;
+  color: var(--azul-oscuro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.usuario-nombre {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.usuario-rol {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* =========================================
+   Menú lateral (Sidebar)
+   ========================================= */
+.sidebar {
+  position: fixed;
+  top: var(--alto-header);
+  left: 0;
+  bottom: 0;
+  width: var(--ancho-sidebar);
+  background-color: var(--azul-oscuro);
+  padding: 16px 12px;
+  overflow-y: auto;
+  transition: width 0.2s;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 11px 14px;
+  margin-bottom: 4px;
+  border-radius: 8px;
+  color: var(--texto-menu);
+  text-decoration: none;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.sidebar-link .fa {
+  width: 22px;
+  text-align: center;
+  font-size: 17px;
+}
+
+.sidebar-texto {
+  margin-left: 12px;
+}
+
+.sidebar-link:hover {
+  background-color: var(--azul-hover);
+  color: #ffffff;
+}
+
+/* Clase que agrega NavLink automáticamente a la opción seleccionada */
+.sidebar-link.active {
+  background-color: var(--azul-activo);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Menú contraído: solo se muestran los íconos */
+.sidebar-contraido {
+  width: var(--ancho-sidebar-contraido);
+}
+
+.sidebar-contraido .sidebar-texto {
+  display: none;
+}
+
+.sidebar-contraido .sidebar-link {
+  justify-content: center;
+}
+
+/* =========================================
+   Contenido principal
+   ========================================= */
+.contenido {
+  margin-top: var(--alto-header);
+  margin-left: var(--ancho-sidebar);
+  padding: 28px;
+  transition: margin-left 0.2s;
+}
+
+.contenido-expandido {
+  margin-left: var(--ancho-sidebar-contraido);
+}
+
+.titulo-pagina {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--azul-oscuro);
+}
+
+/* =========================================
+   Responsive: en pantallas chicas el menú
+   muestra siempre solo los íconos
+   ========================================= */
+@media (max-width: 767px) {
+  .sidebar {
+    width: var(--ancho-sidebar-contraido);
+  }
+
+  .sidebar .sidebar-texto {
+    display: none;
+  }
+
+  .sidebar .sidebar-link {
+    justify-content: center;
+  }
+
+  .contenido {
+    margin-left: var(--ancho-sidebar-contraido);
+    padding: 20px 16px;
+  }
+}

@@ -1,7 +1,10 @@
-import React from "react";
-
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <div>
+      <h1 className="titulo-pagina">Panel Principal</h1>
+      <p className="text-muted">Bienvenido al sistema de gestión de traslados</p>
+    </div>
+  );
 };
 
 export default Home;
