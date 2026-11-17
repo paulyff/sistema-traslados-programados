@@ -203,6 +203,54 @@ body {
 }
 
 /* =========================================
+   Tarjetas de estadísticas (ej: Choferes)
+   ========================================= */
+.tarjeta-estadistica {
+  height: 100%;
+  background-color: #ffffff;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.tarjeta-icono {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Colores de fondo de los íconos */
+.icono-azul {
+  background-color: #1e3a8a;
+}
+
+.icono-verde {
+  background-color: #22c55e;
+}
+
+.icono-naranja {
+  background-color: #f97316;
+}
+
+.tarjeta-valor {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.tarjeta-texto {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+/* =========================================
    Responsive: en pantallas chicas el menú
    muestra siempre solo los íconos
    ========================================= */
